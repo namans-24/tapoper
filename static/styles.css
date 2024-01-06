@@ -1,0 +1,92 @@
+/* static/styles.css */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -10px;
+    bottom: 0;
+    z-index: 1000;
+    padding-top: 56px;
+    overflow-y: auto;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+#newRequestDropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    padding-top: 56px;
+    overflow-y: auto;
+    width: 40px;
+
+}
+.sidebar:hover {
+    width: 75px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #000; /* Adjust text color based on your preference */
+    transition: background-color 0.3s ease;
+}
+
+.sidebar:hover a {
+    background-color: #f8f9fa;
+}
+.container-fluid {
+    display: flex;
+}
+main {
+    flex: 1;
+    padding: 0px;
+    margin-left: 50px; /* Adjust this margin to match the width of your sidebar */
+    position: relative;
+}
+
+#newRequestButton {
+    margin-right: 20px; /* Adjust the margin as needed */
+    z-index: 1001;
+}
+
+#newRequestDropdown {
+    position: absolute;
+    top: 20px;
+    left: 1020px;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+    display: none;
+    min-width: 290px;
+    padding: .5rem 0;
+    margin: .100rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+}
+
+#newRequestDropdown:hover .dropdown-menu {
+    display: block;
+}
+.d-flex.align-items-center {
+    height: 100%;
+}
+

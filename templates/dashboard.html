@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapoper</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+
+<!-- ... (other head content) ... -->
+</head>
+
+<body>
+<!-- Content -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Side Menu -->
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'home' %}active{% endif %}" href="#" title="Home">
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'report' %}active{% endif %}" href="#" title="Report">
+                            <i class="far fa-file"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'approvals' %}active{% endif %}" href="#" title="Report">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'marketing' %}active{% endif %}" href="#" title="Report">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'stats' %}active{% endif %}" href="#" title="Report">
+                            <i class="fas fa-chart-bar"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'expenditure' %}active{% endif %}" href="#" title="Report">
+                            <i class="fas fa-dollar-sign"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if active_tab == 'calendar' %}active{% endif %}" href="#" title="Report">
+                            <i class="far fa-calendar-alt"></i>
+                        </a>
+                    </li>
+                    <!-- Repeat for other menu items -->
+                </ul>
+            </div>
+        </nav>
+        
+    </div>    
+</div> 
+        <main role="main" class="col-md-10 col-lg-10 px-4">
+
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+                <h1 class="h2">{{ company_name }}</h1>  
+            </div>
+
+              <div class="btn-group ml-auto" id="newRequestDropdown">
+            <button id="newRequestButton" type="button" class="btn btn-primary">
+                + New Request
+            </button>
+            <div class="dropdown-menu" aria-labelledby="newRequestDropdown">
+                <a class="dropdown-item" href="#">Request a new post</a>
+                <a class="dropdown-item" href="#">Request Reminder to Senior</a>
+                <a class="dropdown-item" href="#">Request a change in Future Creatives</a>
+                <a class="dropdown-item" href="#">Request a New Budget</a>
+            </div>
+        </div>
+        
+        
+        
+            <div class="d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3">
+                <h1 class="h2">{{ active_tab.capitalize()}}</h1>
+            <!-- Content for each tab goes here -->
+            </div>
+        </main>
+
+      
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- ... (other script tags) ... -->
+
+
+</body>
+
+</html>
